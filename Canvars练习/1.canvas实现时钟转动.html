@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas width="400" height="500" id="mycanvas"></canvas>
+  </body>
+  <!-- 动画思想：  清屏---更新---渲染 -->
+  <script>
+    var canvas = document.getElementById("mycanvas");
+    var ctx = canvas.getContext("2d");
+    ctx.fillStyle="blue"
+    // 设置信号量
+    var left = 10;
+    setInterval(() => {
+      // 清除画布
+      ctx.clearRect(0, 0, 700, 600);
+      // 更新信号量
+      left++;
+      ctx.fillRect(left, left, 100, 100);
+      if (left == 700) {
+        left = 10;
+      }
+    }, 4);
+  </script>
+</html>
